@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:54:18 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/04 03:00:35 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/04 12:21:21 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stddef.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -81,17 +83,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /* get_next_line */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+# ifndef GET_NEXT_LINE_H
+#  define GET_NEXT_LINE_H
 
-# define FD_MAX 1024
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
+#  define FD_MAX 1024
+#  ifndef BUFFER_SIZE
+#   define BUFFER_SIZE 1
+#  endif
 
 /* get_next_line */
 char	*get_next_line(int fd);
@@ -105,17 +103,11 @@ char	*ft_strjoin_g(char *s1, char *s2);
 char	*ft_strchr_g(const char *s, int c);
 char	*join(char *rest, char *buff);
 
-#endif
+# endif
 
 /* ft_printf */
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdio.h>
-# include <limits.h>
+# ifndef FT_PRINTF_H
+#  define FT_PRINTF_H
 
 /* Enum t_type */
 typedef enum e_type
@@ -132,10 +124,10 @@ typedef enum e_type
 }	t_type;
 
 /* Variables */
-# define HEX_MIN "0123456789abcdef"
-# define HEX_MAJ "0123456789ABCDEF"
-# define DEC "0123456789"
-# define TYPES "cspdiuxX%"
+#  define HEX_MIN "0123456789abcdef"
+#  define HEX_MAJ "0123456789ABCDEF"
+#  define DEC "0123456789"
+#  define TYPES "cspdiuxX%"
 
 /* Parsing */
 t_type	*parsing(const char *s);
@@ -153,6 +145,6 @@ int		count_putptr(void *n);
 
 /* PRINTF */
 int		ft_printf(const char *s, ...);
-#endif
+# endif
 
 #endif
