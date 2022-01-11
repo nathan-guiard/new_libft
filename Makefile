@@ -6,7 +6,7 @@
 #    By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/04 03:13:28 by nguiard           #+#    #+#              #
-#    Updated: 2022/01/04 03:15:14 by nguiard          ###   ########.fr        #
+#    Updated: 2022/01/11 13:04:54 by nguiard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,9 @@ SRC =  ft_isalpha.c 		\
 	count_putstr.c		\
 	count_putunsigned.c	\
 	parsing.c		\
+	set_layout.c		\
+	set_layout_printf.c	\
+	loading_bar.c		\
 
 
 CFLAGS = -Wall -Werror -Wextra
