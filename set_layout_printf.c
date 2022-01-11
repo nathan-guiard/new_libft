@@ -6,11 +6,11 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:04:02 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/05 14:12:21 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/11 13:09:22 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_colors.h"
+#include "libft.h"
 
 void	set_layout_printf(unsigned int fg, unsigned int bg, unsigned int style)
 {

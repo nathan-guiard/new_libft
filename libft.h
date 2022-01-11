@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:54:18 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/11 13:05:52 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/11 13:11:03 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <limits.h>
+# include <stdarg.h>
+# include <stdio.h>
 
 typedef struct s_list
 {

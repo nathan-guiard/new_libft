@@ -6,11 +6,11 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 13:25:39 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/05 13:59:26 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/11 13:09:35 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_colors.h"
+#include "libft.h"
 
 static void	print_braille(int i)
 {

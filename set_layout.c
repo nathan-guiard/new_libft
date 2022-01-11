@@ -6,11 +6,11 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 00:27:37 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/05 13:59:39 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/11 13:10:42 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_colors.h"
+#include "libft.h"
 
 void	ft_putchar_c(char c)
 {
@@ -36,11 +36,6 @@ void	ft_putnbr_c(unsigned int n)
 	if (n < 10)
 	{
 		ft_putchar_c(n + '0');
-	}
-	else if (n < 0)
-	{
-		ft_putchar_c('-');
-		ft_putnbr_c(n * (-1));
 	}
 	else
 	{
