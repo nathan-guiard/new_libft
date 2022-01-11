@@ -6,7 +6,7 @@
 #    By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/04 03:13:28 by nguiard           #+#    #+#              #
-#    Updated: 2022/01/11 13:04:54 by nguiard          ###   ########.fr        #
+#    Updated: 2022/01/11 14:09:40 by nguiard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,24 +74,42 @@ CFLAGS = -Wall -Werror -Wextra
 
 OBJ = ${SRC:.c=.o}
 
+
 NAME = libft.a
 
 CC = gcc
 
+nb:=1
+
+n:=0
+
+a:=0
+
+ls:=0
+
 all: ${NAME}
 
 .c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	$(eval n=$(shell echo $$(($(nb)/10 * 35))))
+	$(eval a=$(shell echo $$((202 - $(n)))))
+	@printf "\033[0;38;5;%dm" "${a}"
+	@echo -n "\rCompilation de l'objet" ${nb} "terminee\033[0m"
+	$(eval nb=$(shell echo $$(($(nb)+1))))
 
 ${NAME}: ${OBJ}
-	ar rc ${NAME} ${OBJ}
-	ranlib ${NAME}
+	@echo "\033[1;38;5;10m\nCompilation de libft.a\033[0m            "
+	@ar rc ${NAME} ${OBJ}
+	@ranlib ${NAME}
+	@echo "\033[1;38;5;2mCompilation terminee 👍\033[0m"
 
 clean:
-	rm -f ${OBJ}
+	@rm -f ${OBJ}
+	@echo "clean termine!"
 
 fclean:
-	rm -f ${OBJ} ${NAME}
+	@rm -f ${OBJ} ${NAME}
+	@echo "fclean termine!"
 
 re: fclean all
 
