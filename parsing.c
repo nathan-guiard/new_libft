@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 09:31:36 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/04 03:08:21 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/29 11:12:37 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static t_type	*assign_tab(const char *s, int taille)
 	return (res);
 }
 
-t_type	*parsing(const char *s)
+t_type	*printf_parsing(const char *s)
 {
 	int		i;
 	int		taille;

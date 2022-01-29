@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:52:38 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/04 03:08:00 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/29 11:13:36 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	ft_printf(const char *s, ...)
 	t_type	*tab_type;
 
 	va_start(param_list, s);
-	tab_type = parsing(s);
+	tab_type = printf_parsing(s);
 	count = print_everything(s, tab_type, param_list);
 	va_end(param_list);
 	free(tab_type);

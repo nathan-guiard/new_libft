@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:54:18 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/29 11:08:11 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/29 11:14:00 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ typedef enum e_type
 #  define TYPES "cspdiuxX%"
 
 /* Parsing */
-t_type	*parsing(const char *s);
+t_type	*printf_parsing(const char *s);
 t_type	is_valid(char c);
 
 /* Print arguments */
