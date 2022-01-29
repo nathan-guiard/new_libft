@@ -6,7 +6,7 @@
 #    By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/04 03:13:28 by nguiard           #+#    #+#              #
-#    Updated: 2022/01/29 11:10:36 by nguiard          ###   ########.fr        #
+#    Updated: 2022/01/29 11:21:37 by nguiard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,8 @@ SRC =  ft_isalpha.c 		\
 	set_layout.c		\
 	set_layout_printf.c	\
 	loading_bar.c		\
+	get_whole_file.c	\
+	ft_xtoi.c			\
 
 
 CFLAGS = -Wall -Werror -Wextra
