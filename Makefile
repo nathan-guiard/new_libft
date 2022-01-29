@@ -6,7 +6,7 @@
 #    By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/04 03:13:28 by nguiard           #+#    #+#              #
-#    Updated: 2022/01/29 11:21:37 by nguiard          ###   ########.fr        #
+#    Updated: 2022/01/29 11:28:11 by nguiard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,7 @@ all: ${NAME}
 
 .c.o:
 	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
-	$(eval n=$(shell echo $$(($(nb)/10 * 35))))
+	$(eval n=$(shell echo $$(($(nb)/15 * 35))))
 	$(eval a=$(shell echo $$((202 - $(n)))))
 	@printf "\033[0;38;5;%dm" "${a}"
 	@echo -n "\rCompilation de l'objet" ${nb} "terminee\033[0m"
