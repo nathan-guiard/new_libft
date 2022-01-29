@@ -6,13 +6,13 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 11:29:03 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/04 02:51:36 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/29 11:02:27 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen_g(const char *s)
 {
 	size_t	i;
 
