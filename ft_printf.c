@@ -6,27 +6,11 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:52:38 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/29 11:13:36 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/31 17:16:08 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*init_fnc_tab(void)
-{
-	void	**res;
-
-	res = malloc(sizeof(void *) * 8);
-	res[nombre] = &count_putnbr;
-	res[caractere] = &count_putchar;
-	res[non_signe] = &count_putunsigned;
-	res[pointeur] = &count_putptr;
-	res[hex_min] = &count_puthex_min;
-	res[hex_maj] = &count_puthex_maj;
-	res[pourcent] = &count_putprct;
-	res[chaine] = &count_putstr;
-	return (res);
-}
 
 int	do_your_shit(t_type mod, va_list param_list)
 {
@@ -46,6 +30,8 @@ int	do_your_shit(t_type mod, va_list param_list)
 		return (count_putprct());
 	if (mod == chaine)
 		return (count_putstr(va_arg(param_list, char *)));
+	if (mod == binaire)
+		return (count_putbin(va_arg(param_list, unsigned int)));
 	return (0);
 }
 

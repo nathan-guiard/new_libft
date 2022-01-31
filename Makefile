@@ -6,7 +6,7 @@
 #    By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/04 03:13:28 by nguiard           #+#    #+#              #
-#    Updated: 2022/01/29 11:28:11 by nguiard          ###   ########.fr        #
+#    Updated: 2022/01/31 17:16:32 by nguiard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ SRC =  ft_isalpha.c 		\
 	count_putprct.c		\
 	count_putptr.c		\
 	count_putstr.c		\
+	count_putbin.c		\
 	count_putunsigned.c	\
 	parsing.c		\
 	set_layout.c		\
