@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 11:17:12 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/29 11:49:08 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/01/31 17:07:57 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char	*get_whole_file(int fd)
 	line = 0;
 	to_free = NULL;
 	to_free++;
+	buff = NULL;
 	while (buff || line == 0)
 	{
 		buff = get_next_line(fd);
