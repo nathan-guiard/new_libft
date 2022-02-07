@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:23:35 by nguiard           #+#    #+#             */
-/*   Updated: 2021/11/29 12:10:10 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/02/02 10:05:54 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,20 @@ t_list	*ft_lstnew(void *content)
 	t_list	*a;
 
 	a = malloc(sizeof(t_list));
+	if (!a)
+	{
+		return (NULL);
+	}
+	a->content = content;
+	a->next = NULL;
+	return (a);
+}
+
+t_list_int	*ft_lstnew_int(int content)
+{
+	t_list_int	*a;
+
+	a = malloc(sizeof(t_list_int));
 	if (!a)
 	{
 		return (NULL);

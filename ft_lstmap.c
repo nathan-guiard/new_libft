@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 11:02:21 by nguiard           #+#    #+#             */
-/*   Updated: 2021/12/02 10:17:44 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/02/02 10:36:53 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,28 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		ft_lstadd_back(&res, buff);
+		lst = lst->next;
+	}
+	return (res);
+}
+
+t_list_int	*ft_lstmap_int(t_list_int *lst, int (*f)(int))
+{
+	t_list_int	*buff;
+	t_list_int	*res;
+
+	res = NULL;
+	if (!lst || !f)
+		return (NULL);
+	while (lst)
+	{
+		buff = ft_lstnew_int((f)(lst->content));
+		if (!buff)
+		{
+			ft_lstclear_int(&res);
+			return (NULL);
+		}
+		ft_lstadd_back_int(&res, buff);
 		lst = lst->next;
 	}
 	return (res);

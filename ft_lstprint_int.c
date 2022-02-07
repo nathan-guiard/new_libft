@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstprint_int.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 18:10:55 by nguiard           #+#    #+#             */
-/*   Updated: 2022/02/02 11:31:08 by nguiard          ###   ########.fr       */
+/*   Created: 2022/02/02 10:23:14 by nguiard           #+#    #+#             */
+/*   Updated: 2022/02/02 17:02:59 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
-{
-	t_list	*buff;
-
-	if (!*alst)
-	{
-		*alst = new;
-		return ;
-	}
-	buff = ft_lstlast(*alst);
-	buff->next = new;
-}
-
-void	ft_lstadd_back_int(t_list_int **alst, t_list_int *new)
+void	ft_lstprint_int(t_list_int *lst)
 {
 	t_list_int	*buff;
 
-	if (!*alst)
+	if (!lst)
 	{
-		*alst = new;
+		ft_printf("La liste est vide\n");
 		return ;
 	}
-	buff = ft_lstlast_int(*alst);
-	buff->next = new;
+	buff = lst;
+	while (buff->next != NULL)
+	{
+		ft_printf("%d\n", buff->content);
+		buff = buff->next;
+	}
+	ft_printf("%d\n", buff->content);
 }
