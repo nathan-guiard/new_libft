@@ -1,43 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_length.c                                    :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 07:50:42 by nguiard           #+#    #+#             */
-/*   Updated: 2021/12/09 07:55:29 by nguiard          ###   ########.fr       */
+/*   Created: 2022/02/10 16:44:20 by nguiard           #+#    #+#             */
+/*   Updated: 2022/02/10 16:46:32 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
-
-int	s_nblen(long long n, int baselen)
+int	ft_abs(int x)
 {
-	int	i;
-
-	i = 0;
-	if (n == -9223372036854775807)
-		return (19);
-	if (n < 0)
-		n *= -1;
-	while (n > baselen)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
-}
-
-int	u_nblen(long long n, int baselen)
-{
-	int	i;
-
-	i = 0;
-	while (n > baselen)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
+	if (x < 0)
+		return (x * -1);
+	return (x);
 }

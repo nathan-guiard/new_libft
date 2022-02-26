@@ -6,7 +6,7 @@
 #    By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/04 03:13:28 by nguiard           #+#    #+#              #
-#    Updated: 2022/01/31 17:16:32 by nguiard          ###   ########.fr        #
+#    Updated: 2022/02/15 09:50:10 by nguiard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRC =  ft_isalpha.c 		\
 	count_puthex_maj.c	\
 	count_puthex_min.c	\
 	count_putnbr.c		\
+	count_putlong.c		\
 	count_putprct.c		\
 	count_putptr.c		\
 	count_putstr.c		\
@@ -70,7 +71,10 @@ SRC =  ft_isalpha.c 		\
 	set_layout_printf.c	\
 	loading_bar.c		\
 	get_whole_file.c	\
-	ft_xtoi.c			\
+	ft_xtoi.c		\
+	ft_lstindex.c		\
+	ft_lstprint_int.c	\
+	ft_abs.c			\
 
 
 CFLAGS = -Wall -Werror -Wextra
