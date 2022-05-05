@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 09:31:36 by nguiard           #+#    #+#             */
-/*   Updated: 2022/05/05 12:46:48 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/05/05 12:52:45 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ t_type	is_valid(char c)
 		return (chaine);
 	if (c == 'b')
 		return (binaire);
+	if (c == 'l')
+		return (long_int);
 	return (rien);
 }
 

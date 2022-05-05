@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint_int.c                                  :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 10:23:14 by nguiard           #+#    #+#             */
-/*   Updated: 2022/05/05 12:52:23 by nguiard          ###   ########.fr       */
+/*   Created: 2022/02/10 16:44:20 by nguiard           #+#    #+#             */
+/*   Updated: 2022/02/10 16:46:32 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstprint_int(t_list_int *lst)
+int	ft_abs(int x)
 {
-	t_list_int	*buff;
-
-	if (!lst)
-	{
-		ft_printf("La liste est vide\n");
-		return ;
-	}
-	buff = lst;
-	while (buff)
-	{
-		ft_printf("%l\n", buff->content);
-		buff = buff->next;
-	}
+	if (x < 0)
+		return (x * -1);
+	return (x);
 }

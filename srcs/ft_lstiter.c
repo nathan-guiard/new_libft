@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:54:23 by nguiard           #+#    #+#             */
-/*   Updated: 2022/02/02 10:02:44 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/02/15 09:32:45 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	(*f)(buff->content);
 }
 
-void	ft_lstiter_int(t_list_int *lst, void (*f)(int))
+void	ft_lstiter_int(t_list_int *lst, void (*f)(long))
 {
 	t_list_int	*buff;
 

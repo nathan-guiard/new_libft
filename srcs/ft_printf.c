@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:52:38 by nguiard           #+#    #+#             */
-/*   Updated: 2022/05/05 12:46:11 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/05/05 12:52:32 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	do_your_shit(t_type mod, va_list param_list)
 		return (count_putstr(va_arg(param_list, char *)));
 	if (mod == binaire)
 		return (count_putbin(va_arg(param_list, unsigned int)));
+	if (mod == long_int)
+		return (count_putlong(va_arg(param_list, long)));
 	return (0);
 }
 
