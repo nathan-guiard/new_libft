@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_whole_file.c                                   :+:      :+:    :+:   */
+/*   count_putlong.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 11:17:12 by nguiard           #+#    #+#             */
-/*   Updated: 2022/05/05 13:10:02 by nguiard          ###   ########.fr       */
+/*   Created: 2021/12/08 11:32:27 by nguiard           #+#    #+#             */
+/*   Updated: 2022/05/05 13:00:36 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*get_whole_file(int fd)
+int	count_putlong(long n)
 {
-	char	*buff;
-	char	*res;
-	char	*to_free;
-	int		line;
+	static int	i;
 
-	line = 0;
-	to_free = NULL;
-	to_free++;
-	buff = NULL;
-	res = NULL;
-	while (buff || line == 0)
+	i = 0;
+	if (n == LONG_MIN)
+		return (count_putstr("-9223372036854775808"));
+	if (n >= 0 && n < 10)
 	{
-		buff = get_next_line(fd);
-		if (!buff)
-			break ;
-		line++;
-		to_free = res;
-		res = join(res, buff);
+		i += count_putchar(n + '0');
+		return (i);
 	}
-	return (res);
+	else if (n < 0)
+	{
+		count_putchar('-');
+		count_putnbr(n * (-1));
+		i += 1;
+	}
+	else
+	{
+		count_putnbr(n / 10);
+		i += count_putchar((n % 10) + 48);
+	}
+	return (i);
 }

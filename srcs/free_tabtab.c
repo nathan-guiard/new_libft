@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_whole_file.c                                   :+:      :+:    :+:   */
+/*   free_tabtab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 11:17:12 by nguiard           #+#    #+#             */
-/*   Updated: 2022/05/05 13:10:02 by nguiard          ###   ########.fr       */
+/*   Created: 2022/05/05 13:03:15 by nguiard           #+#    #+#             */
+/*   Updated: 2022/05/05 13:13:49 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*get_whole_file(int fd)
+/*	free() un double tableau de n'importe quelle sorte	*/
+void	free_tabtab(void *dtab)
 {
-	char	*buff;
-	char	*res;
-	char	*to_free;
-	int		line;
+	int	i;
 
-	line = 0;
-	to_free = NULL;
-	to_free++;
-	buff = NULL;
-	res = NULL;
-	while (buff || line == 0)
+	i = 0;
+	while (dtab[i])
 	{
-		buff = get_next_line(fd);
-		if (!buff)
-			break ;
-		line++;
-		to_free = res;
-		res = join(res, buff);
+		free(dtab[i]);
+		i++;
 	}
-	return (res);
+	free(dtab);
 }

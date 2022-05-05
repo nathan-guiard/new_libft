@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 10:48:01 by nguiard           #+#    #+#             */
-/*   Updated: 2022/05/05 12:42:08 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/05/05 13:08:35 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ char	*read_until_newline(int fd, char *rest)
 		if (lenread <= 0)
 			break ;
 		buff[lenread] = '\0';
-		rest = join(rest, buff);
+		rest = join_gnl(rest, buff);
 		if (!rest)
 			break ;
 	}

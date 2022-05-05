@@ -6,7 +6,7 @@
 #    By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/04 03:13:28 by nguiard           #+#    #+#              #
-#    Updated: 2022/05/05 12:51:03 by nguiard          ###   ########.fr        #
+#    Updated: 2022/05/05 13:13:29 by nguiard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,8 +65,9 @@ SRC =  srcs/ft_isalpha.c 		\
 	srcs/count_putptr.c			\
 	srcs/count_putstr.c			\
 	srcs/count_putbin.c			\
+	srcs/count_putlong.c		\
 	srcs/count_putunsigned.c	\
-	srcs/parsing_printf.c				\
+	srcs/parsing_printf.c		\
 	srcs/set_layout.c			\
 	srcs/set_layout_printf.c	\
 	srcs/loading_bar.c			\
@@ -74,6 +75,9 @@ SRC =  srcs/ft_isalpha.c 		\
 	srcs/ft_xtoi.c				\
 	srcs/ft_strcmp.c			\
 	srcs/ft_strrm_index.c		\
+	srcs/ft_abs.c				\
+	srcs/ft_free.c				\
+	srcs/join.c					\
 
 CFLAGS = -Wall -Werror -Wextra -Iinclude
 

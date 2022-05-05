@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 12:44:04 by nguiard           #+#    #+#             */
-/*   Updated: 2022/05/05 12:44:53 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/05/05 12:58:49 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef enum e_type
 	pourcent = 7,
 	chaine = 8,
 	binaire = 9,
+	long_int = 10,
 }	t_type;
 
 /* Variables */
@@ -50,6 +51,7 @@ int			count_putprct(void);
 int			count_putnbr(int n);
 int			count_putptr(void *n);
 int			count_putbin(unsigned int n);
+int			count_putlong(long n);
 
 /* PRINTF */
 int			ft_printf(const char *s, ...);

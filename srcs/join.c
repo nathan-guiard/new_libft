@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_putlong.c                                    :+:      :+:    :+:   */
+/*   join.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 11:32:27 by nguiard           #+#    #+#             */
-/*   Updated: 2022/02/15 09:55:28 by nguiard          ###   ########.fr       */
+/*   Created: 2022/05/05 13:07:58 by nguiard           #+#    #+#             */
+/*   Updated: 2022/05/05 13:12:47 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_putlong(long n)
+/*	strjoin mais en mieux, qui free s1 et s2	*/
+char	*join(char *s1, char *s2)
 {
-	static int	i;
+	char	*res;
 
-	i = 0;
-	if (n == LONG_MIN)
-		return (count_putstr("-9223372036854775808"));
-	if (n >= 0 && n < 10)
+	if (!s1)
 	{
-		i += count_putchar(n + '0');
-		return (i);
+		s1 = malloc(sizeof(char));
+		if (!s1)
+			return (NULL);
+		s1[0] = '\0';
 	}
-	else if (n < 0)
+	if (!s2)
 	{
-		count_putchar('-');
-		count_putnbr(n * (-1));
-		i += 1;
+		s2 = malloc(sizeof(char));
+		if (!s2)
+			return (NULL);
+		s2[0] = '\0';
 	}
-	else
-	{
-		count_putnbr(n / 10);
-		i += count_putchar((n % 10) + 48);
-	}
-	return (i);
+	res = ft_strjoin(s1, s2);
+	free(s1);
+	free(s2);
+	return (res);
 }

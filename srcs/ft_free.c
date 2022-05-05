@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_whole_file.c                                   :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 11:17:12 by nguiard           #+#    #+#             */
-/*   Updated: 2022/05/05 13:10:02 by nguiard          ###   ########.fr       */
+/*   Created: 2022/05/05 13:01:02 by nguiard           #+#    #+#             */
+/*   Updated: 2022/05/05 13:02:48 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*get_whole_file(int fd)
+void	ft_free(void *p1, void *p2, void *p3, void *p4)
 {
-	char	*buff;
-	char	*res;
-	char	*to_free;
-	int		line;
-
-	line = 0;
-	to_free = NULL;
-	to_free++;
-	buff = NULL;
-	res = NULL;
-	while (buff || line == 0)
-	{
-		buff = get_next_line(fd);
-		if (!buff)
-			break ;
-		line++;
-		to_free = res;
-		res = join(res, buff);
-	}
-	return (res);
+	if (p1)
+		free(p1);
+	if (p2)
+		free(p2);
+	if (p3)
+		free(p3);
+	if (p4)
+		free(p4);
 }

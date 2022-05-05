@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 11:29:03 by nguiard           #+#    #+#             */
-/*   Updated: 2022/05/05 12:42:01 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/05/05 13:08:14 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strchr_g(const char *s, int c)
 	return (NULL);
 }
 
-char	*join(char *rest, char *buff)
+char	*join_gnl(char *rest, char *buff)
 {
 	char	*new_rest;
 

@@ -6,13 +6,14 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:30:26 by nguiard           #+#    #+#             */
-/*   Updated: 2022/03/21 16:38:09 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/05/05 13:16:16 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*	Enleve l'index <index> du tableau	*/
+/*	Enleve l'index <index> du tableau	
+	Ne free pas str						*/
 char	*ft_strrm_index(char *str, int index)
 {
 	char	*before;
