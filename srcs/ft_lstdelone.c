@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint_int.c                                  :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 10:23:14 by nguiard           #+#    #+#             */
-/*   Updated: 2022/02/02 17:02:59 by nguiard          ###   ########.fr       */
+/*   Created: 2021/11/24 18:37:08 by nguiard           #+#    #+#             */
+/*   Updated: 2022/03/16 17:23:21 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstprint_int(t_list_int *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list_int	*buff;
-
-	if (!lst)
-	{
-		ft_printf("La liste est vide\n");
+	if (!lst || !(lst->content))
 		return ;
-	}
-	buff = lst;
-	while (buff->next != NULL)
-	{
-		ft_printf("%d\n", buff->content);
-		buff = buff->next;
-	}
-	ft_printf("%d\n", buff->content);
+	(*del)(lst->content);
+	free(lst);
+}
+
+void	ft_lstdelone_int(t_list_int *lst)
+{
+	if (lst)
+		free(lst);
 }

@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_whole_file.c                                   :+:      :+:    :+:   */
+/*   count_puthex_maj.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 11:17:12 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/31 17:07:57 by nguiard          ###   ########.fr       */
+/*   Created: 2021/12/08 11:40:34 by nguiard           #+#    #+#             */
+/*   Updated: 2022/05/05 12:45:35 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*get_whole_file(int fd)
+int	count_puthex_maj(unsigned int n)
 {
-	char	*buff;
-	char	*res;
-	char	*to_free;
-	int		line;
+	static int	i;
+	char		hex[16];
 
-	line = 0;
-	to_free = NULL;
-	to_free++;
-	buff = NULL;
-	while (buff || line == 0)
+	ft_strlcpy(hex, HEX_MAJ, 17);
+	i = 0;
+	if (n < 16)
 	{
-		buff = get_next_line(fd);
-		if (!buff)
-			break ;
-		line++;
-		to_free = res;
-		res = join(res, buff);
-		free(buff);
+		i += count_putchar(hex[n]);
+		return (i);
 	}
-	return (res);
+	else
+	{
+		count_puthex_maj(n / 16);
+		i += count_putchar(hex[n % 16]);
+	}
+	return (i);
 }

@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   count_putbin.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 19:38:30 by nathan            #+#    #+#             */
-/*   Updated: 2021/11/18 19:48:43 by nathan           ###   ########.fr       */
+/*   Created: 2022/01/26 15:01:53 by nguiard           #+#    #+#             */
+/*   Updated: 2022/05/05 12:45:26 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	count_putbin(unsigned int n)
 {
-	write(fd, &c, 1);
+	static int	i;
+
+	i = 0;
+	if (n <= 1)
+	{
+		i += count_putchar(n + '0');
+		return (i);
+	}
+	else
+	{
+		count_putbin(n / 2);
+		i += count_putchar((n % 2) + 48);
+	}
+	return (i);
 }

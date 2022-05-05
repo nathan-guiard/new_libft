@@ -6,11 +6,11 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 10:48:01 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/04 02:42:31 by nguiard          ###   ########.fr       */
+/*   Updated: 2022/05/05 12:42:08 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {

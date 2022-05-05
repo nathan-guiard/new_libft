@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_putstr.c                                     :+:      :+:    :+:   */
+/*   ft_lstpop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 11:34:16 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/04 03:12:50 by nguiard          ###   ########.fr       */
+/*   Created: 2021/11/24 18:37:08 by nguiard           #+#    #+#             */
+/*   Updated: 2022/03/28 11:20:06 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_putstr(char *s)
+void	ft_lstpop(t_list **alst, t_list *node)
 {
-	int	i;
+	t_list	*following;
+	t_list	*buff;
+	t_list	*before;
 
-	if (!s)
-		return (count_putstr("(null)"));
-	i = 0;
-	while (s[i])
+	if (!alst || !(node->content) || !node)
+		return ;
+	buff = *alst;
+	before = NULL;
+	while (buff)
 	{
-		count_putchar(s[i]);
-		i++;
+		if (buff == node)
+		{
+			following = node->next;
+			if (before)
+				before->next = following;
+			else
+				*alst = following;
+			break ;
+		}
+		before = buff;
+		buff = buff->next;
 	}
-	return (i);
 }

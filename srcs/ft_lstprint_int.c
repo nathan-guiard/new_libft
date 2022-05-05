@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_putbin.c                                     :+:      :+:    :+:   */
+/*   ft_lstprint_int.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 15:01:53 by nguiard           #+#    #+#             */
-/*   Updated: 2022/01/31 17:17:31 by nguiard          ###   ########.fr       */
+/*   Created: 2022/02/02 10:23:14 by nguiard           #+#    #+#             */
+/*   Updated: 2022/03/24 09:09:50 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_putbin(unsigned int n)
+void	ft_lstprint_int(t_list_int *lst)
 {
-	static int	i;
+	t_list_int	*buff;
 
-	i = 0;
-	if (n <= 1)
+	if (!lst)
 	{
-		i += count_putchar(n + '0');
-		return (i);
+		ft_printf("La liste est vide\n");
+		return ;
 	}
-	else
+	buff = lst;
+	while (buff->next != NULL)
 	{
-		count_putbin(n / 2);
-		i += count_putchar((n % 2) + 48);
+		ft_printf("%d\n", buff->content);
+		buff = buff->next;
 	}
-	return (i);
+	ft_printf("%d\n", buff->content);
 }
